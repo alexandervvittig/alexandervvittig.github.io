@@ -1,54 +1,13 @@
-# Orbit
-> This theme is designed by Xiaoying Riley at [3rd Wave Media](http://themes.3rdwavemedia.com/). 
-> Visit her [website](http://themes.3rdwavemedia.com/) for more themes.
+# Thinkspace
 
-I have made this into a Jekyll Theme. Checkout the live demo [here](https://webjeda.com/online-cv/).
+> Thinkspace is just another minimalist Jekyll theme which designed for technical writing blog.
 
-<table>
-  <tr>
-    <th>Desktop</th>
-    <th>Mobile</th>
-  </tr>
-  <tr>
-    <td>
-        <img src="https://webjeda.com/online-cv/assets/images/desktop.png?raw=true" width="600"/>
-    </td>
-    <td>
-        <img src="https://webjeda.com/online-cv/assets/images/mobile.png?raw=true" width="250"/>
-    </td>
-  </tr>
-</table>
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![GENERATOR](https://img.shields.io/badge/made_with-jekyll-blue.svg) ![VERSION](https://img.shields.io/badge/current_version-2.5-green.svg) ![TRAVIS-CI](https://travis-ci.org/heiswayi/thinkspace.svg?branch=master)
 
-## Installation
+- **Demo:** https://heiswayi.github.io/thinkspace/
 
-* [Fork](https://github.com/sharu725/online-cv/fork) the repository
-* Go to settings and set Github Pages source as master.
-* Your new site should be ready at `https://username.github.io/online-cv/`
-
-Change all the details from one place: ``_data/data.yml``
-
-Watch my [video](https://www.youtube.com/embed/T2nx6tj-ZH4) on installation.
-
-## Skins
-
-There are 6 color schemes available:
-
-| Blue | Turquoise | Green |
-|---------|---------|---------|
-| <img src="https://webjeda.com/online-cv/assets/images/blue.jpg" width="300"/> | <img src="https://webjeda.com/online-cv/assets/images/turquoise.jpg" width="300"/> | <img src="https://webjeda.com/online-cv/assets/images/green.jpg" width="300"/> |
-
-| Berry | Orange | Ceramic |
-|---------|---------|---------|
-| <img src="https://webjeda.com/online-cv/assets/images/berry.jpg" width="300"/> | <img src="https://webjeda.com/online-cv/assets/images/orange.jpg" width="300"/> | <img src="https://webjeda.com/online-cv/assets/images/ceramic.jpg" width="300"/> |
-
-## Credits
-
-Thanks to [Nelson Estevão](https://github.com/nelsonmestevao) for all the [contributions](https://github.com/sharu725/online-cv/commits?author=nelsonmestevao).
-
-Thanks to [t-h-e(sfrost)](https://github.com/t-h-e) for all the [contributions](https://github.com/sharu725/online-cv/commits?author=t-h-e).
-
-Check out for more themes: [**Jekyll Themes**](http://jekyll-themes.com).
+![SCREENSHOT](https://i.imgur.com/1YS078k.png)
 
 ## License
 
-This project is licensed under the [MIT license](LICENSE.txt).
+[MIT](LICENSE.md)
