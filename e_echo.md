@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Categories
+title: Echo
 permalink: /categories/
 ---
 
