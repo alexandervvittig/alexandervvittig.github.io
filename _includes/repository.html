@@ -1,0 +1,3 @@
+{{ site.locales[site.default_locale].Aboutme }}
+{{site.author}} {{site.aboutme}} 
+{% if site.ShowContactInfo == "True" %} You can contact me via: {% if site.email != empty %} Email / {% endif %} {% if site.github_username != empty %} Github / {% endif %} {% if site.twitter_username != empty %} Twitter {% endif %} {% endif %}
