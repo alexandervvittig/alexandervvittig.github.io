@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "READ ME"
-date:   2018-10-24 13:57:36 -0700
-categories: jekyll update
+title: READ ME
+excerpt: "News"
+categories: articles
+tags: [sample-post]
+comments: true
+categories: news
 ---
 
 Hello, if you are reading this, you are probably wondering what's going on.
