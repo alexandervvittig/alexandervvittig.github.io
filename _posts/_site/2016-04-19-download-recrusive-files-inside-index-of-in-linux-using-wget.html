@@ -1,0 +1,32 @@
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget -r --no-parent --reject "index.html*" http://125.160.17.22/dokumen/IGN/Panduan_OpenOffice.org_2.0/
+</code></pre></div></div>
+
+<p>For me I have to pass the –no-parent option, otherwise it will follow the link in the directory index on my site to the parent directory. So the command would look like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget -r --no-parent http://mysite.com/configs/.vim/
+</code></pre></div></div>
+
+<p>Edit: To avoid downloading the index.html files, use this command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget -r --no-parent --reject "index.html*" http://mysite.com/configs/.vim/
+</code></pre></div></div>
+
+<p>The Parameters are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">-r</code>     //recursive Download</li>
+  <li><code class="highlighter-rouge">--no-parent</code> // Don´t download something from the parent directory</li>
+  <li><code class="highlighter-rouge">-l1</code> //just download the directory (tzivi in your case)</li>
+  <li><code class="highlighter-rouge">-l2</code> //download the directory and all level 1 subfolders (‘tzivi/something’ but not ‘tivizi/somthing/foo’)</li>
+</ul>
+
+<p>And so on. If you insert no <code class="highlighter-rouge">-l</code> option, wget will use <code class="highlighter-rouge">-l</code> 5 automatically.<br />
+If you insert a -l 0 you´ll download the whole internet, because wget will follow every link it finds.</p>
+
+<p><strong>Refference:</strong></p>
+
+<ul>
+  <li><a href="http://stackoverflow.com/a/19695143/3445802">http://stackoverflow.com/a/19695143/3445802</a></li>
+  <li><a href="http://stackoverflow.com/a/273776/3445802">http://stackoverflow.com/a/273776/3445802</a></li>
+</ul>
+

@@ -1,45 +1,57 @@
-# Site settings
-title_left    : "Think"
-title_right   : "space" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
-keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url           : https://alexandervvittig.github.io # site url
-baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
-cover         : "" # image uri like logo/cover image for site seo
+title: Stack Problems
+description: My Personal Stack Problems
+author: Agus Makmun
+github: https://github.com/agusmakmun
+about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
+disqus_shortname: stackproblems
+google_analytics: UA-XXXXXXXX-Y
+avatar_url: /static/img/avatar.jpg
 
-google_analytics  : UA-XXXXX-XX
-twitter_username  : ""
-comments_enabled  : false # if enabled (set to true), please provide your disqus_username
-disqus_shortname  : ""
-postshare_enabled : false
+enableTags: true
+tagarray: []
 
-# Build settings
-permalink   : /:year/:title/
-markdown    : kramdown
-highlighter : rouge
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
 
-source      : ./
-destination : ./_site
+social:
+    - icon: fa-facebook
+      link: "#"
+    - icon: fa-twitter
+      link: "https://twitter.com/agusmakmun6"
+    - icon: fa-linkedin
+      link: "https://www.linkedin.com/in/summonagus"
+    - icon: fa-stack-exchange
+      link: "#"
+    - icon: fa-github
+      link: "https://github.com/agusmakmun"
 
-# Sass configuration
-sass:
-  sass_dir  : assets/scss
-  style     : compressed # expanded
+share:
+  twitter_username: agusmakmun6
+  fb_appid: 1749788565247320
 
-# Author settings
-author:
-  name     : "Alex Wittig"
+urls:
+    - text: About Me
+      url: /about/
+    - text: My Projects
+      url: /projects/
+    - text: XML Feed
+      url: /feed.xml
 
-plugins:
-  - jekyll-sitemap
-  - bourbon
+url: "https://agusmakmun.github.io"
+baseurl: ""
+paginate: 20
+per_page: 20
+paginate_path: "/page/:num/"
+markdown: kramdown
+gems:
   - jekyll-paginate
+  - jekyll-gist
 
-# navbar pages
-navbar:
-  - slug : about
-    title: About
-  - slug : blog
-    title: Blog
-
-exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "script"]
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']

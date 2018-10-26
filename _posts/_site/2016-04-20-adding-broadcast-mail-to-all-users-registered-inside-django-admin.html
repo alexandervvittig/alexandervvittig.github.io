@@ -1,0 +1,73 @@
+<p>Adding BroadCast Mail to All User Registered in Django Admin. This is my last problem, we need custom default Django Admin to can submit BroadCast mail to All User. Because this is perfectly to make a promotions.</p>
+
+<p>This problem has been helped by our Danny W. Adair who are answered someone’s question about the <a href="http://stackoverflow.com/a/5803941/3445802">“Django Admin Customizing”</a>.</p>
+
+<blockquote>
+  <p>In this configuration, we use gmail for email backend. Please following this tutorial first <a href="https://agusmakmun.github.io/python/django/2016/04/18/email-backend-with-smtp-gmail.html">Email BackEnd with SMTP Gmail</a>.</p>
+</blockquote>
+
+<hr />
+
+<p><strong>1.</strong> In your <code class="highlighter-rouge">models.py</code></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">BroadCast_Email</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">subject</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">RichTextUploadingField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subject</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s">"BroadCast Email to all Member"</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s">"BroadCast Email"</span></code></pre></figure>
+
+<hr />
+
+<p><strong>2.</strong> In your <code class="highlighter-rouge">admin.py</code>, importing some module for “admin” and for “email setup”.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.utils.safestring</span> <span class="kn">import</span> <span class="n">mark_safe</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.core.mail</span> <span class="kn">import</span> <span class="p">(</span><span class="n">send_mail</span><span class="p">,</span> <span class="n">BadHeaderError</span><span class="p">,</span> <span class="n">EmailMessage</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+<span class="k">class</span> <span class="nc">EmailThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">html_content</span><span class="p">,</span> <span class="n">recipient_list</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subject</span> <span class="o">=</span> <span class="n">subject</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recipient_list</span> <span class="o">=</span> <span class="n">recipient_list</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">html_content</span> <span class="o">=</span> <span class="n">html_content</span>
+        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">EmailMessage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subject</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">html_content</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">EMAIL_HOST_USER</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recipient_list</span><span class="p">)</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">content_subtype</span> <span class="o">=</span> <span class="s">"html"</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">msg</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">BadHeaderError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">'Invalid header found.'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">BroadCast_Email_Admin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BroadCast_Email</span>
+
+    <span class="k">def</span> <span class="nf">submit_email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span> <span class="c1">#`obj` is queryset, so there we only use first selection, exacly obj[0]
+</span>        <span class="n">list_email_user</span> <span class="o">=</span> <span class="p">[</span> <span class="n">p</span><span class="o">.</span><span class="n">email</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span> <span class="p">]</span> <span class="c1">#: if p.email != settings.EMAIL_HOST_USER   #this for exception
+</span>        <span class="n">obj_selected</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">EmailThread</span><span class="p">(</span><span class="n">obj_selected</span><span class="o">.</span><span class="n">subject</span><span class="p">,</span> <span class="n">mark_safe</span><span class="p">(</span><span class="n">obj_selected</span><span class="o">.</span><span class="n">message</span><span class="p">),</span> <span class="n">list_email_user</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">submit_email</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s">'Submit BroadCast (1 Select Only)'</span>
+    <span class="n">submit_email</span><span class="o">.</span><span class="n">allow_tags</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="n">actions</span> <span class="o">=</span> <span class="p">[</span> <span class="s">'submit_email'</span> <span class="p">]</span>
+
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s">"subject"</span><span class="p">,</span> <span class="s">"created"</span><span class="p">)</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">'subject'</span><span class="p">,]</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">BroadCast_Email</span><span class="p">,</span> <span class="n">BroadCast_Email_Admin</span><span class="p">)</span></code></pre></figure>
+
+<hr />
+
+<p><strong>3.</strong> And then, you can see. we have <strong>Submit BroadCast</strong> selection, just click button <strong>Go</strong> to submit broadcast mail.</p>
+
+<p><img src="https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/static/img/_posts/Broadcast_Mail.png" alt="Screenshot broadcast" title="Screenshot broadcast" /></p>

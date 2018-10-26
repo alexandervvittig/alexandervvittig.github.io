@@ -1,0 +1,31 @@
+<p>Example in this problem we need redirect the url <code class="highlighter-rouge">http://localhost:8000/a/b/C/123/4/5/</code> to <code class="highlighter-rouge">http://localhost:8000/abC12345</code> without <code class="highlighter-rouge">/</code> slash.</p>
+
+<h4 id="1-in-your-viewspy">1. In your <code class="highlighter-rouge">views.py</code></h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="kn">import</span> <span class="n">RedirectView</span>
+<span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+
+<span class="c1">#Ref: http://stackoverflow.com/a/16627830/3445802
+</span><span class="k">class</span> <span class="nc">UserRedirectView</span><span class="p">(</span><span class="n">RedirectView</span><span class="p">):</span>
+    <span class="n">permanent</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">def</span> <span class="nf">get_redirect_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+        <span class="n">pk</span> <span class="o">=</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pk</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'/'</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="s">'pool_fix_page'</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s">'pk'</span><span class="p">:</span> <span class="n">pk</span><span class="p">})</span>
+
+<span class="k">def</span> <span class="nf">pool_fix</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"You're looking at question </span><span class="si">%</span><span class="s">s."</span> <span class="o">%</span> <span class="n">pk</span><span class="p">)</span></code></pre></figure>
+
+<h4 id="2-in-your-urlspy">2. In your <code class="highlighter-rouge">urls.py</code></h4>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># first view the pool to doing redirection
+</span>    <span class="n">url</span><span class="p">(</span><span class="s">r'^pool/(?P&lt;pk&gt;[0-9a-zA-Z\/]+)/$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">UserRedirectView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'pool'</span><span class="p">),</span>
+
+    <span class="c1"># allow decimal and words only.
+</span>    <span class="n">url</span><span class="p">(</span><span class="s">r'^pool/(?P&lt;pk&gt;[\d\w_]+)$'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">pool_fix</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'pool_fix_page'</span><span class="p">),</span>
+<span class="p">]</span></code></pre></figure>
+

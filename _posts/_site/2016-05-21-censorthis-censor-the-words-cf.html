@@ -1,0 +1,81 @@
+<p>Author Question: <strong>Argaen</strong></p>
+
+<p>Code Fights Weekly has gained popularity in the past months and is receiving lots of fan letters. Unfortunately, some of the readers use offensive words and the editor wants to keep the magazine family friendly.</p>
+
+<p>To manage this, you have been asked to implement a censorship algorithm. You will be given the fan letter <code class="highlighter-rouge">text</code> and a list of <code class="highlighter-rouge">forbiddenWords</code>. Your algorithm should replace all occurrences of the forbidden words in the text with sequences of asterisks of the same length.</p>
+
+<p>Be careful to censor only words, no one want to see <code class="highlighter-rouge">"classic"</code> spelled as <code class="highlighter-rouge">"cl***ic"</code>.</p>
+
+<p><strong>Example</strong></p>
+
+<p>For text = “The cat does not like the fire” and
+forbiddenWords = [“cat”,”fire”], the output should be
+`CensorThis(text, forbiddenWords) = “The <strong>* does not like the **</strong>”.</p>
+
+<ul>
+  <li><strong>[input] string text</strong></li>
+</ul>
+
+<p>Text to censor, composed of mixed case English words separated by a single whitespace character each.</p>
+
+<ul>
+  <li><strong>[input] array.string forbiddenWords</strong></li>
+</ul>
+
+<p>The list of words to censor, all in lowercase.</p>
+
+<ul>
+  <li><strong>[output] string</strong></li>
+</ul>
+
+<p>The censored text. Its length should be the same as the length of text.</p>
+
+<p><strong>Solution:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">CensorThis</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">forbiddenWords</span><span class="p">):</span>
+  <span class="k">return</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span> <span class="n">t</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s">"*"</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">forbiddenWords</span> <span class="k">else</span> <span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="p">])</span>
+</code></pre></div></div>
+
+<p><strong>Test 1</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>text: "The cat does not like the fire"
+forbiddenWords: ["cat", "fire"]
+Expected Output: "The *** does not like the ****"
+</code></pre></div></div>
+
+<p><strong>Test 2</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>text: "The cat does not like the therapy"
+forbiddenWords: ["the",  "like"]
+Expected Output: "*** cat does not **** *** therapy"
+</code></pre></div></div>
+
+<p><strong>Test 3</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>text: "Python is the BEST programming language and LOLCODE is the Worst"
+forbiddenWords: ["worst", "best"]
+Expected Output: "Python is the **** programming language and LOLCODE is the *****"
+</code></pre></div></div>
+
+<p><strong>Test 4</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>text: "A bald eagle is a worthy adversary"
+forbiddenWords: ["bald", "a"]
+Expected Output: "* **** eagle is * worthy adversary"
+</code></pre></div></div>
+
+<p><strong>Test 5</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>text: "The MAGIC words are fiz buzz and plaf"
+forbiddenWords: []
+Expected Output: "The MAGIC words are fiz buzz and plaf"
+</code></pre></div></div>
+
+<p><strong>Test 6</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>text: "The MAGIC words are fiz buzz and plaf"
+forbiddenWords: ["fluzz", "z", "ping", "narf", "tedd", "troz", "zort"]
+Expected Output: "The MAGIC words are fiz buzz and plaf"
+</code></pre></div></div>
+
+<p>Thanks to <strong>GOD</strong>.</p>

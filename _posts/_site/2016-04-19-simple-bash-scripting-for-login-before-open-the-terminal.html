@@ -1,0 +1,28 @@
+<p>Add this in your file of <code class="highlighter-rouge">/etc/bash.bashrc</code>, makesure you logged in as root.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">### ===============================================</span>
+<span class="c1">### Simple bash scripting for login before open the terminal.</span>
+<span class="c1">### Credit: &lt;Summon Agus&gt; - agus@python.web.id</span>
+<span class="c1">### Location, end script of: /etc/bash.bashrc</span>
+<span class="c1">### ===============================================</span>
+
+<span class="k">while</span> <span class="kp">true</span><span class="p">;</span> <span class="k">do</span>
+  <span class="c1"># Don't exit at Ctrl-C</span>
+  <span class="nb">trap</span> <span class="s2">"echo"</span> <span class="no">SIGINT</span>
+
+  <span class="nb">printf</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+  <span class="n">echo</span> <span class="o">-</span><span class="n">n</span> <span class="s2">" Who are you guys? "</span><span class="p">;</span> <span class="n">read</span> <span class="o">-</span><span class="n">s</span> <span class="nb">name</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">[</span> <span class="s2">"$name"</span> <span class="o">==</span> <span class="s2">"agus"</span> <span class="p">];</span> <span class="k">then</span>
+    <span class="n">reset</span>
+    <span class="nb">printf</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> Welcome my KING! you are the best!!</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="nb">printf</span> <span class="s2">" "</span><span class="p">;</span> <span class="n">date</span><span class="p">;</span>
+    <span class="nb">printf</span> <span class="s2">" Please start your activity with Basmalah</span><span class="se">\n\n</span><span class="s2">"</span>
+    <span class="k">break</span>
+  <span class="k">else</span>
+    <span class="nb">printf</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> Heey you! why you here!! You are not owner of this machine!</span><span class="se">\n</span><span class="s2">"</span>
+  <span class="n">fi</span>
+<span class="n">done</span>
+
+<span class="c1">### ===============================================</span>
+<span class="c1">### END</span>
+<span class="c1">### ===============================================</span></code></pre></figure>

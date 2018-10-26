@@ -1,0 +1,23 @@
+<p>This method simple but important. Example in your project dir is like this:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">project_dir</span><span class="o">/</span>
+           <span class="n">__init__</span><span class="p">.</span><span class="nf">py</span>
+           <span class="n">__init__</span><span class="p">.</span><span class="nf">pyc</span>
+           <span class="n">something</span><span class="p">.</span><span class="nf">py</span>
+           <span class="n">something</span><span class="p">.</span><span class="nf">pyc</span>
+           <span class="o">...</span>
+           <span class="n">core</span><span class="o">/</span>
+               <span class="n">__init__</span><span class="p">.</span><span class="nf">py</span>
+               <span class="n">__init__</span><span class="p">.</span><span class="nf">pyc</span>
+               <span class="n">build</span><span class="p">.</span><span class="nf">py</span>
+               <span class="n">build</span><span class="p">.</span><span class="nf">pyc</span></code></pre></figure>
+
+<p>Deleting the <code class="highlighter-rouge">.pyc</code> files one by one would be spending a lot of time. and you will be bored. There is sample how to handle it.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find your_dir -name *.pyc -delete
+</code></pre></div></div>
+
+<p>OR, if you work inside current directory.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ find . -name *.pyc -delete
+</code></pre></div></div>
