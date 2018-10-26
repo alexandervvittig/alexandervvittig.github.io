@@ -1,11 +1,6 @@
----
+--
 layout: post
 title: READ ME
-excerpt: "News"
-categories: articles
-tags: [sample-post]
-comments: true
-categories: news
 ---
 
 Hello, if you are reading this, you are probably wondering what's going on.
