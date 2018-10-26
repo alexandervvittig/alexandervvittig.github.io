@@ -41,7 +41,8 @@ locales:
       About: "About"
       Guestbook: "Guestbook"
       Subscribe: "Subscribe"
-      Repository: "Repository"
+      Repository: "Repo"
+      Banana: "Banana"
     
 
 ### Build settings

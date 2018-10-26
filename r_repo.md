@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: default
 title: Repo
 comments: yes
-permalink: /repo/
+permalink: /Repo/
 ---
 Repo Page

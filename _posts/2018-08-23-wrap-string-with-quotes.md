@@ -1,14 +1,5 @@
 ---
-id: 716
-title: Wrap string with quotes
-date: 2018-08-23T13:49:29+00:00
-author: Alex W
 layout: post
-guid: https://blog.vvittig.com/?p=716
-permalink: /2018/08/23/wrap-string-with-quotes/
-categories:
-  - PowerShell
-  - RegEx
 ---
 Have you ever found yourself needing to edit a long list with usernames, and you had to go in and manually clean that list up, format it properly, wrap it in quotes and so forth? Yeah, it&#8217;s painful, but I finally found this handy regex statement that makes it all better.
 
