@@ -4,7 +4,6 @@ title: About
 comments: yes
 permalink: /about/
 ---
-Last Update: 12:54
 
 Well, hello there!
 
