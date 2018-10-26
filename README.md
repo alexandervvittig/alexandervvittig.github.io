@@ -1,72 +1,71 @@
-## My Stack Problems
+Freshman21
+==========
 
-> This project forked and has been modified from [A simple grey theme for Jekyll](https://github.com/liamsymonds/simplygrey-jekyll),
-> and the search posts using [Super Search](https://github.com/chinchang/super-search)
+Freshman21 is a Jekyll blog theme, base on theme [Freshman](http://github.com/yulijia/freshman). 
+
+A tribute to WordPress Theme Twenty-Twelve and Twenty-eleven.
+
+Enjoy.
+
+
+![Screen](http://i.imgur.com/oSp7kacl.png)
+
+### Version 2.1 update 2016.06.06
+
+- master branch: the simplest template, original version with
+	* Open Graph META Tags
+	* Microdata(schema.org)
+
+- gh-pages branch: master branch with 
+
+	* [google analytics js template](https://github.com/yulijia/freshman21/blob/gh-pages/_includes/google_analytics.js)
+        * [BackToTop js script](https://github.com/yulijia/freshman21/tree/gh-pages/js)
+        * <q>readmore</q> module
+        * [keyboard shortcuts for pagination](http://yulijia.net/freshman21/news/2016/05/24/new-features.html)
+	* font awesome icon
+	* [Google search](https://github.com/yulijia/freshman21/blob/gh-pages/_includes/google_search.js)
+
+Clone master branch: 
+
+` git clone https://github.com/yulijia/freshman21.git -b master --single-branch`
+
+Clone gh-pages branch: 
+
+`git clone https://github.com/yulijia/freshman21.git -b gh-pages --single-branch`
+
+
+### A Summary of Features
+
+- Provide single column and two columns layout
+- Powerful configure file
+- Comments by Disqus
+- Support LaTeX (by MathJax)
+- Syntax highlighting
+- Multiple Languages support 
+    * English
+    * Chinese
+    * Japanese (Contributed by [kokeiro001](https://github.com/kokeiro001))
+    * Polish (Contributed by [Derson5](https://github.com/Derson5))
+    * Korean (Contributed by [Clifford Choi](https://github.com/ulgoon))
+    * Russian (Contributed by [Anton Alekseev](https://github.com/alexeyev))
+    * Turkish (Contributed by [Muhammet Kara](https://github.com/mrkara))
+    * Indonesian (Contributed by [Samsul Ma'arif](https://github.com/samsulmaarif))
+
+### How to install this theme?
+
+```
+# please make sure you have already installed git tools and ruby tools(gem)
+$ gem install sass
+$ gem install jekyll
+$ git clone https://github.com/yulijia/freshman21.git
+$ mv freshman21/ yourblogname.github.io/
+
+```
 
 ### Demo
-* [https://agusmakmun.github.io](https://agusmakmun.github.io)
 
-#### Features
+Single column, please see [my own blog](http://yulijia.net/en/)
 
-* Sitemap and XML Feed
-* Pagination in homepage
-* Posts under category
-* Realtime Search Posts _(title & description)_ by query.
-* Related Posts
-* Highlight pre
-* Next & Previous Post
-* Disqus comment
-* Projects page & Detail Project page
-* Share on social media
-* Google analytics
-* HTML Minify _(Compress HTML)_ using [Jekyll Compress HTML](https://github.com/penibelst/jekyll-compress-html)
+Two columns, please see the [theme website](http://yulijia.net/freshman21/)
 
-#### Screenshot
 
-![Screenshot Post Page](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/static/img/screenshot-post-page.png  "Screenshot Post Page")
-
-### Install & Configuration
-
-1. Fork this repository
-2. Edit site settings inside file of `_config.yml`
-3. Edit your projects at file of `projects.md`, `_data/projects.json` and inside path of `_project/` _(for detail project)_.
-4. Edit about yourself inside file of `about.md`
-
-### How to Use?
-
-**a. Add new Category**
-
-All categories saved inside path of `category/`, you can see the existed categories.
-
-**b. Add new Posts**
-
-* All posts bassed on markdown syntax _(please googling)_. allowed extensions is `*.markdown` or `*.md`.
-* This files can found at the path of `_posts/`.
-* and the name of files are following `<date:%Y-%m-%d>-<slug>.<extension>`, for example:
-
-```
-2013-09-23-welcome-to-jekyll.md
-
-# or
-
-2013-09-23-welcome-to-jekyll.markdown
-```
-
-Inside the file of it,
-
-```
----
-layout: post                          # (require) default post layout
-title: "Your Title"                   # (require) a string title
-date: 2016-04-20 19:51:02 +0700       # (require) a post date
-categories: [python, django]          # (custom) some categories, but makesure these categories already exists inside path of `category/`
-tags: [foo, bar]                      # (custom) tags only for meta `property="article:tag"`
-image: Broadcast_Mail.png             # (custom) image only for meta `property="og:image"`, save your image inside path of `static/img/_posts`
----
-
-# your content post with markdown syntax goes here...
-```
-
-### Contributing
-
-Feel free to [open a bug](https://github.com/agusmakmun/agusmakmun.github.io/issues) or [contribute to code](https://github.com/agusmakmun/agusmakmun.github.io/pulls)!
