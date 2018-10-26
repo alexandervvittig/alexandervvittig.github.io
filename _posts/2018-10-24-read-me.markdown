@@ -1,8 +1,3 @@
---
-layout: post
-title: READ ME
----
-
 Hello, if you are reading this, you are probably wondering what's going on.
 Well, I am moving from Wordpress to GitHub!
 
