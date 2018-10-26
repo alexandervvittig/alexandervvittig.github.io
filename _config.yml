@@ -1,23 +1,21 @@
 ### Site info:
 title: Alex's Blog
-tagline: Coffee, Code, Computers & more 
-author: Lijia Yu
-email: yu@lijiayu.net
-description: "Freshman21 is a Jekyll blog theme." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
-keywords: "Jekyll, theme, Freshman21"
+tagline: Coffee, Code & more 
+author: Alex Wittig
+email: alexanderwittig@gmail.com
+description: "" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
+keywords: ""
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://alexandervvittig.github.io" # the base hostname & protocol for your site
 locale: en_US
 
 ### Personal info and site tools info:
-twitter_username: yulijia
-github_username:  yulijia
-disqus_shortname: freshman21
+twitter_username: alexvvittig
+github_username:  alexandervvittig
 favicon:     "/images/favicon.ico"
-aboutme: Hi, this is Lijia Yu. I made the Freshman21 theme. Please enjoy it. # these are shown on aboutme-sidebar.
-aboutme_photo: https://i.imgur.com/Mdc4szJl.jpg# your photo.
-google_analytics_key: UA-57979084-1 # put YOUR key here to enable tracking! (blank to disable)
-
+aboutme:  IT Professional# these are shown on aboutme-sidebar.
+aboutme_photo: https://blog.vvittig.com/wp-content/uploads/2016/02/me.jpg # your photo.
+google_analytics_key:  # put YOUR key here to enable tracking! (blank to disable)
 
 ### Site setting:
 ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
