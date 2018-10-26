@@ -22,6 +22,38 @@ ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on ab
 default_column: "two" # blog style: two columns, if default_column != "two", you will see a one column blog.
 default_locale: "en" # blog sidebar language set, only include: English (en), Chinese (cn), Japanese (jp), Polish (pl), Korean (kr),  Russian (ru), Turkish (tr), and Indonesian (id).
 
+locales:
+    en:
+      Aboutme: "About Me"
+      Archives: "Archives"
+      Blogroll: "Blogroll"
+      Categories: "Categories"
+      Copyright_Notice: "Copyright Notice"
+      Recent_Posts: "Recent Posts"
+      Tags: "Tags"
+      Previous: "Older"
+      Next: "Newer"
+      PostedInCategories: "Posted in"
+      Taggedwith: "and tagged"
+      PostDate: "on "
+      Google_search: "Site Search"
+      Home: "Home"
+      About: "About"
+      Guestbook: "Guestbook"
+      Subscribe: "Subscribe"
+    
+
+### your Blogroll info, only name can shown on the page.
+
+Blogroll:
+      - name: Freshman
+        href: http://yulijia.net/freshman
+        title: Another Jekyll blog theme
+      - name: author's website
+        href: http://yulijia.net/
+        title: Lijia Yu's website
+
+
 ### Build settings
 markdown: kramdown
 #highlighter: pygments
