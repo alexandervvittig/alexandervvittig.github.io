@@ -1,0 +1,27 @@
+---
+layout: post
+title: "OVA to VHD"
+description: "Tutorial how to convert an OVA file to a VHD"
+comments: true
+keywords: "PowerShell"
+---
+
+Foy my new work I have to get cozy with [Puppet](https://puppet.com/).
+Puppet provides a great [learning VM](https://puppet.com/download-learning-vm), however it is in a OVA format, and I need it as a VHD so I can use it with Hyper-V in my homelab.
+
+There are several ways and utilities to convert an OVA to VHD
+ * [Like this for example](https://support.purestorage.com/Solutions/Microsoft_Platform_Guide/Hyper-V_Role/*_Convert_VMware_OVA_to_Hyper-V_Virtual_Hard_Disk_VHD)
+ 
+That script however seems to be finniky at times, depending on the OVA file.
+I found that the VirtualBox convert utility seems to work quote a bit easier and more reliable.
+
+It's as easy as this:
+1. Install VirtualBox (Just install the 'Virtual Application', no need for all the other stuff)
+2. Extract the VMDK from the OVA (e.g. with 7-Zip)
+3. Run this in an Admin CMD session:
+```PowerShell
+$VMDK = "c:\path\to\machine.vmdk"
+$VHD  = "c:\path\to\machine.vhd" #the utility will create the VHD for you
+& "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" clonemedium --format vhd $vmdk $VHD
+```
+And voila, you should have a VHD from the OVA that you can use in Hyper-V.
