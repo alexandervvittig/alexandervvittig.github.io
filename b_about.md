@@ -5,14 +5,10 @@ comments: yes
 permalink: /about/
 ---
 
-Well, hello there!
+Alex is a U.S. based Sr. Systems Engineer from Germany with 10+ years of IT industry experience.
 
-My name is Alex Wittig.
+He is a [Spiceworks Hero Award winner](https://community.spiceworks.com/field-guide/spicies-award), PowerShell ethusiast and Moderator at [PowerShell.org](https://powershell.org/). He holds a Bachelors Degree in IT Security, has an MBA [soon&trade;] and about half a pound worth of professional IT certifications. 
 
-I am an IT Professional with 9+ years of Systems Administration, Networking and Virtualization experience.
+Coffee maven, cat stroker, internet fanatic and lifelong learner. 
 
-From Karlsruhe Germany, I live now in the ‘valley’ in Phoenix, Arizona.
-
-I am very passionate about technology and this blog is to share some of my thoughts, projects, achievements, common issues, scripts, recipes and ideas.
-
-If you don’t find me tinkering on new things, I might be posting in the [Spiceworks Community](https://community.spiceworks.com/) or just riding my motorcycle.
+He can be found on Twitter [@alexvvittig](https://twitter.com/alexvvittig)
