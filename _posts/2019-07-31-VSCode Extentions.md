@@ -9,6 +9,10 @@ We all know VSCode is super powerful and going forwward the new standard for Pow
 
 The base feature set is already amazing, but there are extensions that make VS Code even more powerful. I'm going to list here a few of the extensions I use
 
+You can easily see what you have installed by either  
+* In VSCode go to the Extension Tab and enter ```@installed```
+* or run ```code --list-extensions```
+
 1. ms-vscode.powershell or just ```PowerShell```  
 This is the official Microsoft PowerShell extensions, that enable VS Code to do all sorts PowerShell
 2. CoenraadS.bracket-pair-colorizer or just ```Bracket Pair Colorizer```  
