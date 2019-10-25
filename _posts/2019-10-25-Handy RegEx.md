@@ -96,6 +96,7 @@ It does not look like much but if you have a larger script with hundrets of rand
 RegEx is stupid powerful, but with great power comes great resposibility. 
 
 Yes it's complex and quite a beast to master but totally worth it and a great ROI
+I barely scratched the surface of what all Regular Expressions can do, but I love using it for small quick fixes as I just posted about. They used to take quite a lot of time, cleaning lists and stuff up before you can use them. I now I can spend more time on the actual code, rather than cleaning 'dirty' input up!
 
 https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
 
