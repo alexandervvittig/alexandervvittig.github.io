@@ -48,7 +48,7 @@ After:
 "coffee"
 ```
 
-3. Now let's say you need those joint by command in a line again
+3. Now let's say you need those joint by comma in a line again
 
 ```
 Find: \n
