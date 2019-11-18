@@ -10,7 +10,7 @@ Ok, this is not new or rocketsurgery, but it's handy.
 You can Google right out of the cmdline :¬)
 Just add this to your PowerShell profile
 
-``` PowerShell
+```PowerShell
 function google{
     if(-not($args.count -eq 0)){
         $searchstring = $args -join " " 
