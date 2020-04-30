@@ -6,6 +6,7 @@ comments: true
 keywords: "powershell"
 ---
 PowerShell.org is hosting an awesome online conference as the PowerShell cummit was cancelled due to COVID-19.
+
 Live streamed on [Twitch](https://www.twitch.tv/bridgeconf)
 
 [https://powershell.org/calendar/bridgeconf/](https://powershell.org/calendar/bridgeconf/)
