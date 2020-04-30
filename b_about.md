@@ -12,3 +12,5 @@ He is a [Spiceworks Hero Award winner](https://community.spiceworks.com/field-gu
 Coffee maven, cat stroker, internet fanatic and lifelong learner. 
 
 He can be found on Twitter [@alexvvittig](https://twitter.com/alexvvittig)
+
+You can contact Alex via this [contact form](https://forms.gle/tsy5qZjGHj8NaZfg9)
