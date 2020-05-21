@@ -14,4 +14,4 @@ The [gallery](https://www.powershellgallery.com/) officially only supports TLS 1
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
 ```
 
-[READ MORE HERE](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/)
+[Read more: https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/)
